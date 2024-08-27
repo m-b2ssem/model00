@@ -1,12 +1,12 @@
 # Name of the executable
-NAME = account_test
+NAME = account_manager
 
 # Compiler and flags
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 # Source files
-SRC = account.cpp test.cpp
+SRC =  Account.cpp tests.cpp
 
 # Object files
 OBJ = $(SRC:.cpp=.o)
