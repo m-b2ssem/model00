@@ -6,7 +6,7 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 # Source files
-SRC = main.cpp contact.cpp phonebook.cpp setters_getters.cpp
+SRC = main.cpp Contact.cpp PhoneBook.cpp
 
 # Object files
 OBJ = $(SRC:.cpp=.o)

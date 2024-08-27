@@ -1,4 +1,4 @@
-#include "phonebook.cpp"
+#include "PhoneBook.hpp"
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -34,6 +34,10 @@ void addContact(PhoneBook &phoneBook) {
 int stringToInt(const std::string& str) {
     std::istringstream iss(str);
     int num;
+    if (!(iss >> num)) {
+        std::cout << "Invalid input" << std::endl;
+        return -1;
+    }
     iss >> num;
     return num;
 }
@@ -42,6 +46,7 @@ int main() {
     PhoneBook phoneBook;
     std::string command;
     int checker = 0;
+
 
     while (true) {
         std::cout << "Enter command (ADD, SEARCH, EXIT): ";
@@ -57,6 +62,9 @@ int main() {
             std::cout << "Enter index to view details: ";
             std::getline(std::cin, command);
             int index = stringToInt(command);
+            if (index == -1) {
+                continue;
+            }
             phoneBook.displayContact(index);
         } else if (command == "EXIT") {
             break;
@@ -67,3 +75,14 @@ int main() {
 
     return 0;
 }
+
+    /*for (int i = 0; i < 8; i++)
+    {
+        Contact contact;
+        contact.setFirstName("John");
+        contact.setLastName("Doe");
+        contact.setNickname("JD");
+        contact.setPhoneNumber("1234567890");
+        contact.setDarkestSecret("ee");
+        phoneBook.addContact(contact);
+    }*/
